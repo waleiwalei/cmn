@@ -32,7 +32,7 @@ class GPromise {
         let _ref, timer, result = new GPromise(()=>{});
         timer = setInterval(() => {
             if((this._promiseStatus == RESOLVED && typeof onFulfilled == 'function') || 
-            (this._promiseStatus == REJECTED && typeof onFulfilled == 'function')) {
+            (this._promiseStatus == REJECTED && typeof onRejected == 'function')) {
                 clearInterval(timer);
                 try {
                     if(this._promiseStatus == RESOLVED) {
